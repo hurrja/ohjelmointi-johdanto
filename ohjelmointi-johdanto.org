@@ -1,0 +1,121 @@
+#+startup: beamer
+
+#+OPTIONS: ':nil *:t -:t ::t <:t H:1 \n:nil ^:t arch:headline
+#+OPTIONS: author:nil c:nil creator:nil d:(not LOGBOOK) date:nil e:t
+#+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:nil toc:nil todo:t |:t
+#+BEAMER_THEME: Madrid
+#+BEAMER_FONT_THEME: serif
+
+#+title: Ohjelmointi
+
+* Ohjelmointi
+  - tietokoneen ohjaamista
+    - pelit (tietokone, kännykkä)
+    - Word, Excel, Powerpoint
+    - tietokoneen käyttöjärjestelmä
+    - television käyttöjärjestelmä
+  - ohjelmat kirjoitetaan ohjelmointikielellä
+    - satoja
+    - C, Java, Python, Lisp, Processing...
+    - (jossain määrin) erilaisiin käyttötarkoituksiin
+  - ohjelmien kirjoittamista kutsutaan /ohjelmoinniksi/ 
+* Tietokoneohjelma
+  - tietokoneelle annettavat komennot tekstinä
+  - sisältää tyypillisesti
+    - nimettyjä /muuttujia/ kuten ~x~ tai ~y~
+    - /lausekkeita/ kuten 
+      #+BEGIN_EXAMPLE
+      2*x + 1
+      x = x - 150
+      #+END_EXAMPLE
+    - komentoja (/funktiokutsuja/) kuten 
+      #+BEGIN_EXAMPLE
+      rect (x, 200, 400, 300)
+      #+END_EXAMPLE
+  - ohjelma suoritetaan tietokoneessa joko
+    - /kääntämällä/ se konekoodiksi, joka ajetaan
+    - ajamalla se /tulkissa/ (pois)
+* Esimerkki ohjelmasta (Processing)
+**                                                          :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_env: ignoreheading
+   :END:
+  - positiivisen kokonaisluvun $n$ kertoma on \[ n! = 1\cdot 2\cdot
+    \cdots \cdot (n-1)\cdot n \]
+** ohjelma                                                            :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .6
+   :END:
+    #+latex: {\footnotesize
+    #+BEGIN_SRC processing :exports code
+      size (300, 200); // piirtoikkunan koko
+
+      int n = 10; // lasketaan tämän luvun kertoma
+      int tulos = 1; // sisältää tuloksen lopussa
+      for (int i = 2; i <= n; i = i + 1)
+        tulos = tulos * i;
+
+      // koko- ja väriasetuksia
+      textSize (32);
+      fill (255);
+      background (0);
+      textAlign (CENTER, CENTER);
+      // piirretään luku tekstinä
+      text (tulos, width / 2.0, height / 2.0); 
+    #+END_SRC
+    #+latex: }
+** kuva                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .4
+   :END:
+    [[file:kertoma.png]]
+* Mikä ohjelmoinnissa on tärkeää?
+  - ongelman ymmärtäminen
+  - ratkaisun hahmottaminen
+  - ratkaisun ohjelmoiminen
+  - ohjelman oikeellisuus
+  - ohjelman luettavuus
+    - selkeä rakenne
+    - sisennykset
+    - muuttujien ja funktioiden nimeäminen
+    - kommentit
+* Edistyneempi Processing-esimerkki
+** Sisäkkäiset neliöt rekursiivisesti
+   #+latex: {\tiny
+   #+BEGIN_SRC processing :exports code
+     class Piste
+     {
+       Piste (float x, float y) { this.x = x; this.y = y; }
+       float x, y;
+     }
+     Piste kp (Piste a, Piste b)
+     {
+       return (new Piste ((a.x + b.x) / 2, (a.y + b.y) / 2));
+     }
+     void sisakkaiset (int n, Piste a, Piste b, Piste c, Piste d)
+     {
+       if (n <= 0)
+         return;
+       else
+       {
+         quad (a.x, a.y, b.x, b.y, c.x, c.y, d.x, d.y);
+         sisakkaiset (n - 1, kp (a, b), kp (b, c), kp (c, d), kp (d, a));
+       }
+     }
+     void setup ()
+     {
+       size (400, 400);
+       noLoop ();
+     }
+     void draw ()
+     {
+       sisakkaiset (10, new Piste (0, 0), new Piste (width - 1, 0),
+                    new Piste (width - 1, height - 1), new Piste (0, width - 1));
+     }
+   #+END_SRC
+   #+latex: }
+* Tuloksena saatu kuva
+
+  #+attr_latex: :width .6\linewidth
+  [[file:sisakkaiset.png]]
