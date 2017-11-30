@@ -16,8 +16,7 @@
     - tietokoneen käyttöjärjestelmä
     - television käyttöjärjestelmä
   - ohjelmat kirjoitetaan ohjelmointikielellä
-    - satoja
-    - C, Java, Python, Lisp, Processing...
+    - satoja eri kieliä
     - (jossain määrin) erilaisiin käyttötarkoituksiin
   - ohjelmien kirjoittamista kutsutaan /ohjelmoinniksi/ 
 * Tietokoneohjelma
@@ -33,9 +32,6 @@
       #+BEGIN_EXAMPLE
       rect (x, 200, 400, 300)
       #+END_EXAMPLE
-  - ohjelma suoritetaan tietokoneessa joko
-    - /kääntämällä/ se konekoodiksi, joka ajetaan
-    - ajamalla se /tulkissa/ (pois)
 * Esimerkki ohjelmasta (Processing)
 **                                                          :B_ignoreheading:
    :PROPERTIES:
