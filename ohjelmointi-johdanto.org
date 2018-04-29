@@ -19,6 +19,19 @@
     - satoja eri kieliä
     - (jossain määrin) erilaisiin käyttötarkoituksiin
   - ohjelmien kirjoittamista kutsutaan /ohjelmoinniksi/ 
+* Miksi opiskellaan ohjelmointia?
+  - kuluttajista tulee tekijöitä
+  - aika monelle tulevaisuudessa töitä
+    #+BEGIN_QUOTE
+    Suomesta puuttuu vuonna 2025 jopa 25000 osaavaa
+    koodaria. (Kauppalehti maaliskuu 2018)
+    #+END_QUOTE
+  - opettaa loogista (matemaattista) ajattelua ja myös kirjoittamista
+    - ongelman ymmärtäminen
+    - ratkaisun hahmottaminen
+    - ratkaisun ohjelmoiminen
+    - ohjelman oikeellisuus
+    - ohjelman luettavuus
 * Tietokoneohjelma
   - tietokoneelle annettavat komennot tekstinä
   - sisältää tyypillisesti
@@ -66,16 +79,6 @@
    :BEAMER_col: .4
    :END:
     [[file:kertoma.png]]
-* Mikä ohjelmoinnissa on tärkeää?
-  - ongelman ymmärtäminen
-  - ratkaisun hahmottaminen
-  - ratkaisun ohjelmoiminen
-  - ohjelman oikeellisuus
-  - ohjelman luettavuus
-    - selkeä rakenne
-    - sisennykset
-    - muuttujien ja funktioiden nimeäminen
-    - kommentit
 * Edistyneempi Processing-esimerkki
 ** Sisäkkäiset neliöt rekursiivisesti
    #+latex: {\tiny
