@@ -118,3 +118,15 @@
 
   #+attr_latex: :width .6\linewidth
   [[file:sisakkaiset.png]]
+* Processing-ohjelman jakaminen
+  1. perusta oma tili sivulla https://www.openprocessing.org
+  2. valitse \ldquo{}Create a sketch\rdquo
+  3. valitse oikealta \ldquo{}Mode Processing.js\rdquo
+  4. poista valmis koodi ja kopioi ohjelmakoodisi koodi-ikkunaan
+  5. valitse \ldquo{}Save\rdquo
+  6. anna ohjelmallesi nimi ja tee muut tarvittavat valinnat
+  7. valitse \ldquo{}Submit\rdquo
+  8. tämän jälkeen voit jakaa ohjelmaa suoraan www-osoitteella tai
+     oikeasta yläkulman painikkeella Facebookissa, Twitterissä tai
+     animoituna GIF-tiedostona
+  9. esimerkki https://www.openprocessing.org/sketch/591527
